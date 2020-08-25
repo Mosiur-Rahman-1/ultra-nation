@@ -2,8 +2,8 @@ import React from 'react';
 import './Country.css';
 
 const Country = (props) => {
-    const addNewCountry = props.addNewCountry;
-    const { name, region, population, nativeName, flag } = props.name;
+    const { name, region, population, nativeName, flag } = props.countryName;
+    const addCountries = props.addCountries;
     return (
         <div>
             <h1>country details : </h1>
@@ -13,7 +13,7 @@ const Country = (props) => {
             <p>Country Native name : {nativeName}</p>
             <img className="image" src={flag} alt="" />
             <br/>
-            <button onClick = {addNewCountry}>Add country</button>
+            <button onClick = {() => addCountries(props.countryName)}>Add country</button>
         </div>
     );
 };
